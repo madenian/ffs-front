@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { serverAdress } from "../ffs-tools";
 // import Button from "./Button";
-// import OutlineButton from "./Button";
+// import button from "./Button";
 
 function Nav() {
   const dispatch = useDispatch();
@@ -114,20 +114,20 @@ function Nav() {
         onClick={hide}
         style={{ cursor: "pointer" }}
       />
-      <Button
+      <button
         onClick={() => {
           handleOpenModalSignIn();
         }}
       >
         <span className={styles.btnSpan}>Sign In</span>
-      </Button>
-      <OutlineButton
+      </button>
+      <button
         onClick={() => {
           handleOpenModalSignup();
         }}
       >
         Sign Up
-      </OutlineButton>
+      </button>
     </div>
   );
 
@@ -151,9 +151,9 @@ function Nav() {
         onChange={(e) => setSignInPassword(e.target.value)}
         value={signInPassword}
       />
-      <Button id="connection" onClick={() => handleConnection()}>
+      <button id="connection" onClick={() => handleConnection()}>
         Connect
-      </Button>
+      </button>
     </div>
   );
 
@@ -184,9 +184,9 @@ function Nav() {
         onChange={(e) => setSignUpPassword(e.target.value)}
         value={signUpPassword}
       />
-      <Button id="register" onClick={() => handleRegister()}>
+      <button id="register" onClick={() => handleRegister()}>
         Register
-      </Button>
+      </button>
     </div>
   );
 

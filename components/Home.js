@@ -3,6 +3,8 @@ import React from "react";
 import Nav from "../components/NAV";
 
 function Home() {
+
+  
   return (
     <div>
       <Nav></Nav>

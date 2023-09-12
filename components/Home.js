@@ -8,7 +8,7 @@ function Home() {
       <Nav></Nav>
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome tfkhsdkjhso <a href="https://nextjs.org">Next.js!</a>
         </h1>
       </main>
     </div>

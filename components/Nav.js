@@ -199,7 +199,7 @@ function Nav() {
       <div className={styles.navBarLogo}>
         <Link href="/">
           <img
-            src="./logo.png"
+            src="./logo.jpg"
             alt="logo"
             className={`${styles.logoImg} ${styles.rotateOnHover}`}
           />

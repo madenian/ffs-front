@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { serverAdress } from "../ffs-tools";
 // import Button from "./Button";
-// import OutlineButton from "./Button";
+// import button from "./Button";
 
 function Nav() {
   const dispatch = useDispatch();

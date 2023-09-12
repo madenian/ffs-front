@@ -114,20 +114,20 @@ function Nav() {
         onClick={hide}
         style={{ cursor: "pointer" }}
       />
-      <Button
+      <button
         onClick={() => {
           handleOpenModalSignIn();
         }}
       >
         <span className={styles.btnSpan}>Sign In</span>
-      </Button>
-      <OutlineButton
+      </button>
+      <button
         onClick={() => {
           handleOpenModalSignup();
         }}
       >
         Sign Up
-      </OutlineButton>
+      </button>
     </div>
   );
 
@@ -151,9 +151,9 @@ function Nav() {
         onChange={(e) => setSignInPassword(e.target.value)}
         value={signInPassword}
       />
-      <Button id="connection" onClick={() => handleConnection()}>
+      <button id="connection" onClick={() => handleConnection()}>
         Connect
-      </Button>
+      </button>
     </div>
   );
 
@@ -184,9 +184,9 @@ function Nav() {
         onChange={(e) => setSignUpPassword(e.target.value)}
         value={signUpPassword}
       />
-      <Button id="register" onClick={() => handleRegister()}>
+      <button id="register" onClick={() => handleRegister()}>
         Register
-      </Button>
+      </button>
     </div>
   );
 
@@ -199,7 +199,7 @@ function Nav() {
       <div className={styles.navBarLogo}>
         <Link href="/">
           <img
-            src="./logo.png"
+            src="./logo.jpg"
             alt="logo"
             className={`${styles.logoImg} ${styles.rotateOnHover}`}
           />

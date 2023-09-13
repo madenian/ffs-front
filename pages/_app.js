@@ -15,7 +15,7 @@ function App({ Component, pageProps }) {
     <>
       <Provider store={store}>
         <Head>
-          <title>Next.js App</title>
+          <title>Programme TW</title>
         </Head>
         <Component {...pageProps} />
       </Provider>

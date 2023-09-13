@@ -282,13 +282,13 @@ function Nav() {
           </Modal>
         </li>
         <li className={`${styles.navBarItem} ${styles.slideInDown4}`}>
-          <Link href="/WishList">
-            <span onClick={handleShowLinks}>WishList</span>
+          <Link href="/TopLive">
+            <span onClick={handleShowLinks}>Top Live</span>
           </Link>
         </li>
         <li className={`${styles.navBarItem} ${styles.slideInDown5}`}>
-          <Link href="/Cart">
-            <span>Cart</span>
+          <Link href="/Esport">
+            <span>E-sport</span>
           </Link>
         </li>
       </ul>

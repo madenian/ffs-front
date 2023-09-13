@@ -362,9 +362,12 @@ function Home() {
       <Nav></Nav>
       <main className={styles.main}>
         <h1 className={styles.title}>Programme TW</h1>
+        <div className={styles.ScheduleGrid}>
         
         <DateHourSelector></DateHourSelector>
         {ScheduleCard}
+        </div>
+        
       </main>
     </div>
   );

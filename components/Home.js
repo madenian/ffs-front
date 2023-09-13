@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
 import Schedule from "./schedule";
+import DateHourSelector from "./DateHourSelector";
+
 
 function Home() {
   const scheduleData = [
@@ -360,6 +362,8 @@ function Home() {
       <Nav></Nav>
       <main className={styles.main}>
         <h1 className={styles.title}>Programme TW</h1>
+        
+        <DateHourSelector></DateHourSelector>
         {ScheduleCard}
       </main>
     </div>

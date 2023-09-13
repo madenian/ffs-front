@@ -1,0 +1,31 @@
+.CardContainer {
+height: 130px;
+width:280px; 
+display: flex;
+border: 2px solid black;
+}
+
+.ImageContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    
+}
+
+.StreamImage {
+    height: 60px;
+    width: 60px;
+    
+
+}
+
+.DescriptionContainer {
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.DescriptionLine {
+    width: 100%;
+}

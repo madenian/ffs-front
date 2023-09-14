@@ -6,7 +6,13 @@ import moment from "moment/moment";
 import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
 import { useState, useEffect } from "react";
 
+
 const DateHourSelector = () => {
+
+  const onSelectedDay = (selectedDate) => {
+    console.log(selectedDate);
+  };
+
   const actualHour = moment().format("HH");
   // console.log("hour", actualHour);
 
@@ -58,13 +64,14 @@ const DateHourSelector = () => {
 
   return (
     <>
-      <div className={styles.DatePicker}>
+      <div className={styles.DateHourPicker}>
         <ReactHorizontalDatePicker
           enableScroll={false}
           enableDays={10}
+          selectedDay={onSelectedDay}
           className={styles.DatePicker}
         />
-      </div>
+      
       <Box className={styles.Box} width={500}>
         <Slider
           className={styles.Slider}
@@ -79,6 +86,7 @@ const DateHourSelector = () => {
           onChange={(e, value) => setSelectedHour(value)}
         />
       </Box>
+      </div>
     </>
   );
 };

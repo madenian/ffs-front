@@ -6,7 +6,7 @@ import moment from "moment/moment";
 import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
 import { useState, useEffect } from "react";
 
-const DateHourSelector = () => {
+const DateHourSelector = (props) => {
   const marks = [
     {
       value: 0,
@@ -44,26 +44,33 @@ const DateHourSelector = () => {
       value: 21,
       label: "21h",
     },
-    {
-      value: 21.3,
-      label: "",
-    },
   ];
   const actualHour = parseInt(moment().format("HH"));
+  const actualDay = moment().format("DD/MM/YYYY");
 
-  const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
-  const [selectedDate, setSelectedDate] = useState(actualDay);
+  // const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
+  // const [selectedDate, setSelectedDate] = useState(actualDay);
 
-  const onSelectedDay = (selectedDate) => {
-    selectedDate = moment(selectedDate).format("DD/MM/YYYY");
-    setSelectedDate(selectedDate);
-    console.log("selectedDateOK", selectedDate);
+  //fonction reçu pour l'inverse data flow pour la gestion du jour
+  const onSelectedDay = (date) => {
+    const formattedDate = moment(date).format("DD/MM/YYYY");
+    props.selectedDay(formattedDate);
+
+    // console.log("selectedDate dans la fonction ", selectedDate);
+    console.log("selectedDate dans la fonction formatted ", formattedDate);
   };
 
+  //fonction reçu pour l'inverse data flow pour la gestion de l'heure
+  const onSelectedHour = (hour) => {
+    console.log("hour", hour);
+    props.selectedTime(hour);
+    // console.log("selectedHour dans la fonction ", formattedHour);
+  };
+
+  // console.log("selectedDate En dehors de tout ", selectedDate);
   // console.log("hour", actualHour);
   // console.log("selectedHour", selectedHour);
 
-  const actualDay = moment().format("DD/MM/YYYY");
   // console.log("actualDay", actualDay);
   // console.log("selectedDate", selectedDate);
 
@@ -73,7 +80,7 @@ const DateHourSelector = () => {
         <ReactHorizontalDatePicker
           enableScroll={false}
           enableDays={10}
-          selectedDay={onSelectedDay}
+          onSelectedDay={onSelectedDay}
           className={styles.DatePicker}
         />
 
@@ -88,7 +95,7 @@ const DateHourSelector = () => {
             min={0}
             max={24}
             color="primary"
-            onChange={(e, value) => setSelectedHour(value)}
+            onChange={(e, value) => onSelectedHour(value)}
           />
         </Box>
       </div>

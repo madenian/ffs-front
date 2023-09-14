@@ -3,6 +3,7 @@ height: 160px;
 width:280px; 
 display: flex;
 border: 2px solid black;
+border-radius: 10px;
 margin: 20px;
 overflow: hidden;
 }

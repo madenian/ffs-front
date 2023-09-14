@@ -26,7 +26,7 @@ function Schedule({ name, title, id, start, end, category, image }) {
           <FontAwesomeIcon
             icon={faEye}
             beat
-            style={{ color: "#be5cff", cursor: "pointer" }}
+            style={{ color: "#9146FF", cursor: "pointer" }}
           />
         </a>
         {/* <FontAwesomeIcon icon={faTwitch} beat style={{color: "#be5cff",}} /> */}

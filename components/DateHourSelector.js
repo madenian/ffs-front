@@ -7,12 +7,13 @@ import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
 import { useState, useEffect } from "react";
 
 const DateHourSelector = () => {
+
   const onSelectedDay = (selectedDate) => {
     console.log(selectedDate);
   };
 
   const actualHour = moment().format("HH");
-  // console.log("hour", actualHour);
+  console.log("hour", actualHour);
 
   const marks = [
     {

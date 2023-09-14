@@ -14,7 +14,7 @@
     height: 45px;
     flex-shrink: 0;
     border-radius: 50%;
-    border: 2px solid #fdfbfb;    /* color: #e6545b; */
+    border: 2px solid #fdfbfb;    /* color: #9146FF; */
 }
 
 .datepicker-button-previous-wrapper {
@@ -28,7 +28,7 @@
     height: 45px;
     flex-shrink: 0;
     border-radius: 50%;
-    /* color: #e6545b; */
+    /* color: #9146FF; */
 }
 
 
@@ -48,13 +48,13 @@
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 2px solid #e6545b;
-    color: #e6545b;
+    border: 2px solid #9146FF;
+    color: #9146FF;
 
 }
 
 .datepicker-date-day-Item:hover{
-    background-color:  #e6545b;
+    background-color:  #9146FF;
     border: 2px solid transparent;
     color: #fff;
     width: 45px;
@@ -118,7 +118,7 @@
 .datepicker-button-previous, .datepicker-button-next{
     border: none;
     text-decoration: none;
-    background: #e6545b;
+    background: #9146FF;
     cursor: pointer;
     border-radius: 50%;
     width: 45px;
@@ -141,7 +141,7 @@
     flex-shrink: 0;
     border-radius: 50%;
     border: 2px solid transparent;
-    /* color: #e6545b; */
+    /* color: #9146FF; */
 }
 
 .datepicker-button-previous{
@@ -153,7 +153,7 @@
 .datepicker-month-label  {
     margin-left: 12px;
     font-size: 15px;
-    color: #e6545b;
+    color: #9146FF;
     font-weight: bold;
 }
 

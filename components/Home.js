@@ -2,9 +2,10 @@ import styles from "../styles/Home.module.css";
 import React from "react";
 import Nav from "../components/NAV";
 // import { useDispatch, useSelector } from "react-redux";
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
 import Schedule from "./schedule";
+import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
 
 function Home() {
@@ -338,9 +339,28 @@ function Home() {
       ],
     },
   ];
-  
-  const allSchedules = scheduleData.flatMap((streamer) => {
 
+  const actualHour = moment().format("HH");
+  const actualDay = moment().format("DD/MM/YYYY");
+
+  const [selectedDate, setSelectedDate] = useState(actualDay);
+  const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
+  
+// fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
+  const selectedDay = (date) => {
+    const formattedDate = moment(date).format("DD/MM/YYYY");
+    setSelectedDate(formattedDate);
+  };
+  // console.log("Date du HOME", selectedDate);
+  
+  // fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
+  const selectedTime = (hour) => {
+    console.log("Hour du HOME", hour);
+    // const formattedHour = moment(hour).format("HH");
+    setSelectedHour(hour);
+  };
+
+  const allSchedules = scheduleData.flatMap((streamer) => {
     // Aplatir les tableaux de plannings en ajoutant une référence aux données du streamer
     return streamer.schedule.map((planning) => {
       return {
@@ -353,14 +373,39 @@ function Home() {
       };
     });
   });
-console.log("allSchedules1", allSchedules[1])
+  // console.log("allSchedules1", allSchedules[1]);
 
   // Tri des plannings par date de début
   const sortedSchedules = allSchedules.sort((a, b) => {
     return new Date(a.start_time).getTime() - new Date(b.start_time).getTime();
   });
 
-  const ScheduleCard = sortedSchedules.map((planning) => {
+  //formattage de la date en fonction du start_time
+  const dayOfStream = (date) => {
+    const day = moment(date).format("DD/MM/YYYY");
+    return day;
+  };
+
+  const filteredSchedules = sortedSchedules.filter((planning) => {
+    //   // Filtrer les plannings qui ne sont pas sur la bonne journée
+    return dayOfStream(planning.start_time) == selectedDate;
+  });
+
+  // définition d'un filtre en fonction de l'heure de début et de fin : si l'heure de début est inférieure à l'heure sélectionnée et que l'heure de fin est supérieure à l'heure sélectionnée alors on garde le planning
+  const filteredSchedulesByHour = filteredSchedules.filter((planning) => {
+    const startHour = moment(planning.start_time).format("HH");
+    const endHour = moment(planning.end_time).format("HH");
+
+    if (!endHour) {
+      endHour = 24;
+    }
+    return startHour <= selectedHour && endHour >= selectedHour;
+   
+  }
+  );
+  
+  
+  const ScheduleCard = filteredSchedulesByHour.map((planning) => {
     // Maintenant, vous pouvez accéder aux données du streamer via planning.streamerData
     return (
       <Schedule
@@ -376,13 +421,20 @@ console.log("allSchedules1", allSchedules[1])
     );
   });
 
+  useEffect(() => {
+    console.log("selectedDate", selectedDate);
+  }, [selectedDate]);
+
   return (
     <div>
       <Nav></Nav>
       <main className={styles.main}>
         <h1 className={styles.title}>Programme TW</h1>
         <div className={styles.ScheduleGrid}>
-          <DateHourSelector></DateHourSelector>
+          <DateHourSelector
+            selectedDay={selectedDay}
+            selectedTime={selectedTime}
+          ></DateHourSelector>
           {ScheduleCard}
         </div>
       </main>

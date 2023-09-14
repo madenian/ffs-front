@@ -4,10 +4,11 @@ import React from "react";
 import styles from "../styles/DateHourSelector.module.css";
 import moment from "moment/moment";
 import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
+import { useState, useEffect } from "react";
 
 const DateHourSelector = () => {
   const actualHour = moment().format("HH");
-  console.log("hour", actualHour);
+  // console.log("hour", actualHour);
 
   const marks = [
     {
@@ -52,6 +53,9 @@ const DateHourSelector = () => {
     },
   ];
 
+  const [selectedHour, setSelectedHour] = useState(actualHour);
+  console.log("selectedHour", selectedHour);
+
   return (
     <>
       <div className={styles.DatePicker}>
@@ -71,6 +75,8 @@ const DateHourSelector = () => {
           marks={marks}
           min={0}
           max={24}
+          color="secondary"
+          onChange={(e, value) => setSelectedHour(value)}
         />
       </Box>
     </>

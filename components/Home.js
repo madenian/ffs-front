@@ -1,12 +1,11 @@
 import styles from "../styles/Home.module.css";
 import React from "react";
 import Nav from "../components/NAV";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+// import { useDispatch, useSelector } from "react-redux";
+// import { useEffect, useState } from "react";
 import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
 import Schedule from "./schedule";
 import DateHourSelector from "./DateHourSelector";
-
 
 function Home() {
   const scheduleData = [
@@ -97,6 +96,18 @@ function Home() {
       createdAt: "2013-02-05T19:20:22Z",
       schedule: [
         {
+          id: "eyJzZWdtZW50SUQiOiI0N2UxZjg4YS1hNjY0LTQzMjYtYWY4YS0xMGZhZTgyYmY2NzQiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOX0=",
+          start_time: "2023-09-29T12:00:00Z",
+          end_time: "2023-09-29T13:00:00Z",
+          title: "🎙 PRÉLIVE",
+          canceled_until: null,
+          category: {
+            id: "509658",
+            name: "Just Chatting",
+          },
+          is_recurring: true,
+        },
+        {
           id: "eyJzZWdtZW50SUQiOiJjY2QwOTFkOS04ZTRjLTRhNzEtOWVkNy1hOGFiMTM4YmJmMmEiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozN30=",
           start_time: "2023-09-13T12:00:00Z",
           end_time: "2023-09-13T13:00:00Z",
@@ -157,10 +168,10 @@ function Home() {
           is_recurring: true,
         },
         {
-          id: "eyJzZWdtZW50SUQiOiIyODYwNDIzNS1lY2E4LTQyYmUtOGQ0Yi01MTM3YjllYjdlYTYiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOH0=",
-          start_time: "2023-09-18T17:30:00Z",
-          end_time: "2023-09-18T18:30:00Z",
-          title: "🎙 PRÉLIVE & DEBRIEF DU GP EXPLORER 2 ",
+          id: "eyJzZWdtZW50SUQiOiJkMmIzNmRhYi05MDA2LTQwNjUtODE1NC0wMTk2OGQ4OTU5MjEiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOH0=",
+          start_time: "2023-09-18T18:30:00Z",
+          end_time: "2023-09-18T22:00:00Z",
+          title: "📺 REACT",
           canceled_until: null,
           category: {
             id: "509658",
@@ -169,10 +180,10 @@ function Home() {
           is_recurring: true,
         },
         {
-          id: "eyJzZWdtZW50SUQiOiJkMmIzNmRhYi05MDA2LTQwNjUtODE1NC0wMTk2OGQ4OTU5MjEiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOH0=",
-          start_time: "2023-09-18T18:30:00Z",
-          end_time: "2023-09-18T22:00:00Z",
-          title: "📺 REACT",
+          id: "eyJzZWdtZW50SUQiOiIyODYwNDIzNS1lY2E4LTQyYmUtOGQ0Yi01MTM3YjllYjdlYTYiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOH0=",
+          start_time: "2023-09-18T17:30:00Z",
+          end_time: "2023-09-18T18:30:00Z",
+          title: "🎙 PRÉLIVE & DEBRIEF DU GP EXPLORER 2 ",
           canceled_until: null,
           category: {
             id: "509658",
@@ -233,6 +244,18 @@ function Home() {
           start_time: "2023-09-22T12:00:00Z",
           end_time: "2023-09-22T13:00:00Z",
           title: "🎙 PRÉLIVE",
+          canceled_until: null,
+          category: {
+            id: "509658",
+            name: "Just Chatting",
+          },
+          is_recurring: true,
+        },
+        {
+          id: "eyJzZWdtZW50SUQiOiJlNjNhODYxZS04N2I2LTRiYTMtYWIyNC00YjQ0MjJjMzJhZWYiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOX0=",
+          start_time: "2023-09-28T10:00:00Z",
+          end_time: null,
+          title: "📺 REACT ",
           canceled_until: null,
           category: {
             id: "509658",
@@ -312,49 +335,45 @@ function Home() {
           },
           is_recurring: true,
         },
-        {
-          id: "eyJzZWdtZW50SUQiOiJlNjNhODYxZS04N2I2LTRiYTMtYWIyNC00YjQ0MjJjMzJhZWYiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOX0=",
-          start_time: "2023-09-28T10:00:00Z",
-          end_time: null,
-          title: "📺 REACT ",
-          canceled_until: null,
-          category: {
-            id: "509658",
-            name: "Just Chatting",
-          },
-          is_recurring: true,
-        },
-        {
-          id: "eyJzZWdtZW50SUQiOiI0N2UxZjg4YS1hNjY0LTQzMjYtYWY4YS0xMGZhZTgyYmY2NzQiLCJpc29ZZWFyIjoyMDIzLCJpc29XZWVrIjozOX0=",
-          start_time: "2023-09-29T12:00:00Z",
-          end_time: "2023-09-29T13:00:00Z",
-          title: "🎙 PRÉLIVE",
-          canceled_until: null,
-          category: {
-            id: "509658",
-            name: "Just Chatting",
-          },
-          is_recurring: true,
-        },
       ],
     },
   ];
+  
+  const allSchedules = scheduleData.flatMap((streamer) => {
 
-  const ScheduleCard = scheduleData.map((data) => {
-    return data.schedule.map((planning) => {
-      return (
-        <Schedule
-          id={data._id}
-          key={planning.id}
-          name={data.name}
-          title={planning.title}
-          start={planning.start_time}
-          end={planning.end_time}
-          category={planning.category.name}
-          image={data.profileImage}
-        ></Schedule>
-      );
+    // Aplatir les tableaux de plannings en ajoutant une référence aux données du streamer
+    return streamer.schedule.map((planning) => {
+      return {
+        streamerData: {
+          id: streamer._id,
+          name: streamer.name,
+          image: streamer.profileImage,
+        },
+        ...planning, // Copier toutes les autres propriétés du planning
+      };
     });
+  });
+console.log("allSchedules1", allSchedules[1])
+
+  // Tri des plannings par date de début
+  const sortedSchedules = allSchedules.sort((a, b) => {
+    return new Date(a.start_time).getTime() - new Date(b.start_time).getTime();
+  });
+
+  const ScheduleCard = sortedSchedules.map((planning) => {
+    // Maintenant, vous pouvez accéder aux données du streamer via planning.streamerData
+    return (
+      <Schedule
+        id={planning.streamerData.id}
+        key={planning.id}
+        name={planning.streamerData.name}
+        title={planning.title}
+        start={planning.start_time}
+        end={planning.end_time}
+        category={planning.category.name}
+        image={planning.streamerData.image}
+      ></Schedule>
+    );
   });
 
   return (
@@ -363,11 +382,9 @@ function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Programme TW</h1>
         <div className={styles.ScheduleGrid}>
-        
-        <DateHourSelector></DateHourSelector>
-        {ScheduleCard}
+          <DateHourSelector></DateHourSelector>
+          {ScheduleCard}
         </div>
-        
       </main>
     </div>
   );

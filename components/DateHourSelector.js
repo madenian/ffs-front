@@ -4,16 +4,15 @@ import React from "react";
 import styles from "../styles/DateHourSelector.module.css";
 import moment from "moment/moment";
 import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
-
+import { useState, useEffect } from "react";
 
 const DateHourSelector = () => {
-
   const onSelectedDay = (selectedDate) => {
     console.log(selectedDate);
   };
 
   const actualHour = moment().format("HH");
-  console.log("hour", actualHour);
+  // console.log("hour", actualHour);
 
   const marks = [
     {
@@ -58,6 +57,9 @@ const DateHourSelector = () => {
     },
   ];
 
+  const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
+  console.log("selectedHour", selectedHour);
+
   return (
     <>
       <div className={styles.DateHourPicker}>
@@ -67,19 +69,21 @@ const DateHourSelector = () => {
           selectedDay={onSelectedDay}
           className={styles.DatePicker}
         />
-      
-      <Box className={styles.Box} width={500}>
-        <Slider
-          className={styles.Slider}
-          aria-label="Hour"
-          defaultValue={actualHour}
-          valueLabelDisplay="auto"
-          step={0.5}
-          marks={marks}
-          min={0}
-          max={24}
-        />
-      </Box>
+
+        <Box className={styles.Box} width={500}>
+          <Slider
+            className={styles.Slider}
+            aria-label="Hour"
+            defaultValue={actualHour}
+            valueLabelDisplay="auto"
+            step={0.5}
+            marks={marks}
+            min={0}
+            max={24}
+            color="secondary"
+            onChange={(e, value) => setSelectedHour(value)}
+          />
+        </Box>
       </div>
     </>
   );

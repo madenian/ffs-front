@@ -7,14 +7,6 @@ import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
 import { useState, useEffect } from "react";
 
 const DateHourSelector = () => {
-
-  const onSelectedDay = (selectedDate) => {
-    console.log(selectedDate);
-  };
-
-  const actualHour = moment().format("HH");
-  console.log("hour", actualHour);
-
   const marks = [
     {
       value: 0,
@@ -57,9 +49,23 @@ const DateHourSelector = () => {
       label: "",
     },
   ];
+  const actualHour = parseInt(moment().format("HH"));
 
   const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
-  console.log("selectedHour", selectedHour);
+  const [selectedDate, setSelectedDate] = useState(actualDay);
+
+  const onSelectedDay = (selectedDate) => {
+    selectedDate = moment(selectedDate).format("DD/MM/YYYY");
+    setSelectedDate(selectedDate);
+    console.log("selectedDateOK", selectedDate);
+  };
+
+  // console.log("hour", actualHour);
+  // console.log("selectedHour", selectedHour);
+
+  const actualDay = moment().format("DD/MM/YYYY");
+  // console.log("actualDay", actualDay);
+  // console.log("selectedDate", selectedDate);
 
   return (
     <>
@@ -81,7 +87,7 @@ const DateHourSelector = () => {
             marks={marks}
             min={0}
             max={24}
-            color="secondary"
+            color="primary"
             onChange={(e, value) => setSelectedHour(value)}
           />
         </Box>

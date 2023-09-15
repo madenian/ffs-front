@@ -1,11 +1,19 @@
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 import React from "react";
 import styles from "../styles/DateHourSelector.module.css";
 import moment from "moment/moment";
 import { useState, useEffect } from "react";
 
 const DateHourSelector = (props) => {
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: '#9146ff',
+      },
+    },
+  });
   const marks = [
     {
       value: 0,
@@ -82,21 +90,22 @@ const DateHourSelector = (props) => {
           onSelectedDay={onSelectedDay}
           className={styles.DatePicker}
         /> */}
-
-        <Box className={styles.Box} width={500}>
-          <Slider
-            className={styles.Slider}
-            aria-label="Hour"
-            defaultValue={actualHour}
-            valueLabelDisplay="auto"
-            step={0.5}
-            marks={marks}
-            min={0}
-            max={24}
-            color="primary"
-            onChange={(e, value) => onSelectedHour(value)}
-          />
-        </Box>
+        <ThemeProvider theme={theme}>
+          <Box className={styles.Box} width={500}>
+            <Slider
+              className={styles.Slider}
+              aria-label="Hour"
+              defaultValue={actualHour}
+              valueLabelDisplay="auto"
+              step={0.5}
+              marks={marks}
+              min={0}
+              max={24}
+              color="primary"
+              onChange={(e, value) => onSelectedHour(value)}
+            />
+          </Box>
+        </ThemeProvider>
       </div>
     </>
   );

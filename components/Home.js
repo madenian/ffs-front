@@ -7,6 +7,7 @@ import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
 import Schedule from "./schedule";
 import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
+import DatePicker from "./DatePicker";
 
 function Home() {
   const scheduleData = [
@@ -345,14 +346,14 @@ function Home() {
 
   const [selectedDate, setSelectedDate] = useState(actualDay);
   const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
-  
-// fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
-  const selectedDay = (date) => {
-    const formattedDate = moment(date).format("DD/MM/YYYY");
+
+  const selectedDayOnClick = (val) => {
+    const formattedDate = moment(val).format("DD/MM/YYYY");
     setSelectedDate(formattedDate);
+    ;
   };
-  // console.log("Date du HOME", selectedDate);
   
+
   // fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
   const selectedTime = (hour) => {
     console.log("Hour du HOME", hour);
@@ -400,11 +401,8 @@ function Home() {
       endHour = 24;
     }
     return startHour <= selectedHour && endHour >= selectedHour;
-   
-  }
-  );
-  
-  
+  });
+
   const ScheduleCard = filteredSchedulesByHour.map((planning) => {
     // Maintenant, vous pouvez accéder aux données du streamer via planning.streamerData
     return (
@@ -421,9 +419,6 @@ function Home() {
     );
   });
 
-  useEffect(() => {
-    console.log("selectedDate", selectedDate);
-  }, [selectedDate]);
 
   return (
     <div>
@@ -431,8 +426,16 @@ function Home() {
       <main className={styles.main}>
         <h1 className={styles.title}>Programme TW</h1>
         <div className={styles.ScheduleGrid}>
+          <div className={styles.datePickerContainer}>
+          <DatePicker
+            getSelectedDay={selectedDayOnClick}
+            labelFormat={"MMMM"}
+            color={"#9146FF"}
+            endDate={90}
+          />
+          </div>
+         
           <DateHourSelector
-            selectedDay={selectedDay}
             selectedTime={selectedTime}
           ></DateHourSelector>
           {ScheduleCard}

@@ -3,7 +3,6 @@ import Slider from "@mui/material/Slider";
 import React from "react";
 import styles from "../styles/DateHourSelector.module.css";
 import moment from "moment/moment";
-import ReactHorizontalDatePicker from "react-horizontal-strip-datepicker";
 import { useState, useEffect } from "react";
 
 const DateHourSelector = (props) => {
@@ -46,19 +45,19 @@ const DateHourSelector = (props) => {
     },
   ];
   const actualHour = parseInt(moment().format("HH"));
-  const actualDay = moment().format("DD/MM/YYYY");
+  // const actualDay = moment().format("DD/MM/YYYY");
 
   // const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
   // const [selectedDate, setSelectedDate] = useState(actualDay);
 
   //fonction reçu pour l'inverse data flow pour la gestion du jour
-  const onSelectedDay = (date) => {
-    const formattedDate = moment(date).format("DD/MM/YYYY");
-    props.selectedDay(formattedDate);
+  // const onSelectedDay = (date) => {
+  //   const formattedDate = moment(date).format("DD/MM/YYYY");
+  //   props.selectedDay(formattedDate);
 
-    // console.log("selectedDate dans la fonction ", selectedDate);
-    console.log("selectedDate dans la fonction formatted ", formattedDate);
-  };
+  //   // console.log("selectedDate dans la fonction ", selectedDate);
+  //   console.log("selectedDate dans la fonction formatted ", formattedDate);
+  // };
 
   //fonction reçu pour l'inverse data flow pour la gestion de l'heure
   const onSelectedHour = (hour) => {
@@ -77,12 +76,12 @@ const DateHourSelector = (props) => {
   return (
     <>
       <div className={styles.DateHourPicker}>
-        <ReactHorizontalDatePicker
+        {/* <ReactHorizontalDatePicker
           enableScroll={false}
           enableDays={10}
           onSelectedDay={onSelectedDay}
           className={styles.DatePicker}
-        />
+        /> */}
 
         <Box className={styles.Box} width={500}>
           <Slider

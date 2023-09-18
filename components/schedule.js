@@ -35,7 +35,7 @@ function Schedule({ name, title, id, start, end, category, image }) {
         <div className={styles.DescriptionLine}>{name}</div>
         <div className={styles.DescriptionLine}>{title}</div>
         <div className={styles.DescriptionLine}>{category}</div>
-        <div>{start} / {end}</div>
+        <div>{formattedStartTime} / {formattedEndTime}</div>
         
        
        

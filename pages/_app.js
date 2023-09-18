@@ -3,8 +3,7 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import user from "../reducers/user";
-// import '../public/DatePicker.css'
-// import '../public/Calendar.css'
+
 
 const store = configureStore({
   reducer: { user },

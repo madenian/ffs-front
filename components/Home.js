@@ -345,14 +345,14 @@ function Home() {
 
   const [selectedDate, setSelectedDate] = useState(actualDay);
   const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
-  
-// fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
+
+  // fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
   const selectedDay = (date) => {
     const formattedDate = moment(date).format("DD/MM/YYYY");
     setSelectedDate(formattedDate);
   };
   // console.log("Date du HOME", selectedDate);
-  
+
   // fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
   const selectedTime = (hour) => {
     console.log("Hour du HOME", hour);
@@ -392,19 +392,17 @@ function Home() {
   });
 
   // définition d'un filtre en fonction de l'heure de début et de fin : si l'heure de début est inférieure à l'heure sélectionnée et que l'heure de fin est supérieure à l'heure sélectionnée alors on garde le planning
-  const filteredSchedulesByHour = filteredSchedules.filter((planning) => {
+  const filteredSchedulesByHour = sortedSchedules.filter((planning) => {
     const startHour = moment(planning.start_time).format("HH");
     const endHour = moment(planning.end_time).format("HH");
 
     if (!endHour) {
-      endHour = 24;
+      planning.end_time = endHour;
+      
     }
     return startHour <= selectedHour && endHour >= selectedHour;
-   
-  }
-  );
-  
-  
+  });
+
   const ScheduleCard = filteredSchedulesByHour.map((planning) => {
     // Maintenant, vous pouvez accéder aux données du streamer via planning.streamerData
     return (

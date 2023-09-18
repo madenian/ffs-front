@@ -8,7 +8,6 @@ import moment from 'moment';
 
 function formatTime(timeStr) {
     const date = moment(timeStr);
-
     return date.format("HH:mm");
   }
 
@@ -26,7 +25,7 @@ function Schedule({ name, title, id, start, end, category, image }) {
           <FontAwesomeIcon
             icon={faEye}
             beat
-            style={{ color: "#be5cff", cursor: "pointer" }}
+            style={{ color: "#9146ff", cursor: "pointer" }}
           />
         </a>
         {/* <FontAwesomeIcon icon={faTwitch} beat style={{color: "#be5cff",}} /> */}

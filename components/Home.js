@@ -11,8 +11,6 @@ import DatePicker from "./DatePicker";
 
 function Home() {
 
- 
-
   // const scheduleData = [
   //   {
   //     _id: "65003e0cbcba30ee9048008a",

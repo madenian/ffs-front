@@ -27,9 +27,15 @@ overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
 
 }
 .DescriptionLine {
     width: 100%;
+}
+
+.ViewerCount{
+    color: #9146ff;
+    font-weight:400;
+    text-decoration: none;
 }

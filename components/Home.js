@@ -408,7 +408,7 @@ function Home() {
   });
 
   // définition d'un filtre en fonction de l'heure de début et de fin : si l'heure de début est inférieure à l'heure sélectionnée et que l'heure de fin est supérieure à l'heure sélectionnée alors on garde le planning
-  const filteredSchedulesByHour = sortedSchedules.filter((planning) => {
+  const filteredSchedulesByHour = filteredSchedules.filter((planning) => {
     const startHour = moment(planning.start_time).format("HH");
     const endHour = moment(planning.end_time).format("HH");
 

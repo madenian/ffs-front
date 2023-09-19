@@ -53,142 +53,142 @@ function Nav() {
 
   // boutons de fermeture des modals
 
-  const closeModals = () => {
-    setIsModalConnexionVisible(false);
-    setIsModalRegisterVisible(false);
-  };
+  // const closeModals = () => {
+  //   setIsModalConnexionVisible(false);
+  //   setIsModalRegisterVisible(false);
+  // };
 
   // connexion : fetch du backend pour signin + dispatch
 
-  const handleConnection = () => {
-    fetch(`${serverAdress}/users/signin`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email: signInEmail, password: signInPassword }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.result) {
-          dispatch(
-            login({
-              email: signInEmail,
-              token: data.data.token,
-              username: data.data.username,
-            })
-          );
-          setSignInEmail("");
-          setSignInPassword("");
-          setIsModalConnexionVisible(false);
-        }
-      });
-  };
+  // const handleConnection = () => {
+  //   fetch(`${serverAdress}/users/signin`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ email: signInEmail, password: signInPassword }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.result) {
+  //         dispatch(
+  //           login({
+  //             email: signInEmail,
+  //             token: data.data.token,
+  //             username: data.data.username,
+  //           })
+  //         );
+  //         setSignInEmail("");
+  //         setSignInPassword("");
+  //         setIsModalConnexionVisible(false);
+  //       }
+  //     });
+  // };
 
-  // inscription : fetch du backend pour signup + dispatch
+  // // inscription : fetch du backend pour signup + dispatch
 
-  const handleRegister = () => {
-    fetch(`${serverAdress}/users/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        username: signUpUsername,
-        password: signUpPassword,
-        email: signUpEmail,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.result) {
-          dispatch(login({ email: signUpEmail, token: data.data.token }));
-          setSignUpUsername("");
-          setSignUpPassword("");
-          setIsModalRegisterVisible(false);
-        }
-      });
-  };
+  // const handleRegister = () => {
+  //   fetch(`${serverAdress}/users/signup`, {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({
+  //       username: signUpUsername,
+  //       password: signUpPassword,
+  //       email: signUpEmail,
+  //     }),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       if (data.result) {
+  //         dispatch(login({ email: signUpEmail, token: data.data.token }));
+  //         setSignUpUsername("");
+  //         setSignUpPassword("");
+  //         setIsModalRegisterVisible(false);
+  //       }
+  //     });
+  // };
 
-  const popoverContent = (
-    <div className={styles.popoverContainer}>
-      <FontAwesomeIcon
-        icon={faXmark}
-        size="lg"
-        onClick={hide}
-        style={{ cursor: "pointer" }}
-      />
-      <button
-        onClick={() => {
-          handleOpenModalSignIn();
-        }}
-      >
-        <span className={styles.btnSpan}>Sign In</span>
-      </button>
-      <button
-        onClick={() => {
-          handleOpenModalSignup();
-        }}
-      >
-        Sign Up
-      </button>
-    </div>
-  );
+  // const popoverContent = (
+  //   <div className={styles.popoverContainer}>
+  //     <FontAwesomeIcon
+  //       icon={faXmark}
+  //       size="lg"
+  //       onClick={hide}
+  //       style={{ cursor: "pointer" }}
+  //     />
+  //     <button
+  //       onClick={() => {
+  //         handleOpenModalSignIn();
+  //       }}
+  //     >
+  //       <span className={styles.btnSpan}>Sign In</span>
+  //     </button>
+  //     <button
+  //       onClick={() => {
+  //         handleOpenModalSignup();
+  //       }}
+  //     >
+  //       Sign Up
+  //     </button>
+  //   </div>
+  // );
 
   // contenu modal connexion
 
-  let modalContentConnexion;
+  // let modalContentConnexion;
 
-  modalContentConnexion = (
-    <div className={styles.connexionSection}>
-      <input
-        type="text"
-        placeholder="Email"
-        id="signInEmail"
-        onChange={(e) => setSignInEmail(e.target.value)}
-        value={signInEmail}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        id="signInPassword"
-        onChange={(e) => setSignInPassword(e.target.value)}
-        value={signInPassword}
-      />
-      <button id="connection" onClick={() => handleConnection()}>
-        Connect
-      </button>
-    </div>
-  );
+  // modalContentConnexion = (
+  //   <div className={styles.connexionSection}>
+  //     <input
+  //       type="text"
+  //       placeholder="Email"
+  //       id="signInEmail"
+  //       onChange={(e) => setSignInEmail(e.target.value)}
+  //       value={signInEmail}
+  //     />
+  //     <input
+  //       type="password"
+  //       placeholder="Password"
+  //       id="signInPassword"
+  //       onChange={(e) => setSignInPassword(e.target.value)}
+  //       value={signInPassword}
+  //     />
+  //     <button id="connection" onClick={() => handleConnection()}>
+  //       Connect
+  //     </button>
+  //   </div>
+  // );
 
-  // contenu modal Inscription
+  // // contenu modal Inscription
 
-  let modalContentRegister;
+  // let modalContentRegister;
 
-  modalContentRegister = (
-    <div className={styles.registerSection}>
-      <input
-        type="text"
-        placeholder="Username"
-        id="signUpUsername"
-        onChange={(e) => setSignUpUsername(e.target.value)}
-        value={signUpUsername}
-      />
-      <input
-        type="text"
-        placeholder="Email"
-        id="signUpEmail"
-        onChange={(e) => setSignUpEmail(e.target.value)}
-        value={signUpEmail}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        id="signUpPassword"
-        onChange={(e) => setSignUpPassword(e.target.value)}
-        value={signUpPassword}
-      />
-      <button id="register" onClick={() => handleRegister()}>
-        Register
-      </button>
-    </div>
-  );
+  // modalContentRegister = (
+  //   <div className={styles.registerSection}>
+  //     <input
+  //       type="text"
+  //       placeholder="Username"
+  //       id="signUpUsername"
+  //       onChange={(e) => setSignUpUsername(e.target.value)}
+  //       value={signUpUsername}
+  //     />
+  //     <input
+  //       type="text"
+  //       placeholder="Email"
+  //       id="signUpEmail"
+  //       onChange={(e) => setSignUpEmail(e.target.value)}
+  //       value={signUpEmail}
+  //     />
+  //     <input
+  //       type="password"
+  //       placeholder="Password"
+  //       id="signUpPassword"
+  //       onChange={(e) => setSignUpPassword(e.target.value)}
+  //       value={signUpPassword}
+  //     />
+  //     <button id="register" onClick={() => handleRegister()}>
+  //       Register
+  //     </button>
+  //   </div>
+  // );
 
   return (
     <div
@@ -212,10 +212,10 @@ function Nav() {
           </Link>
         </li>
         
-        <li className={`${styles.navBarItem} ${styles.slideInDown3}`}>
+        {/* <li className={`${styles.navBarItem} ${styles.slideInDown3}`}>
           {user.token ? (
             <div className={styles.logoutSection}>
-              {/* <p>Welcome {user.username} / </p> */}
+           
               <span onClick={() => dispatch(logout())}>Logout</span>
             </div>
           ) : (
@@ -264,7 +264,7 @@ function Nav() {
 
             {modalContentRegister}
           </Modal>
-        </li>
+        </li> */}
         <li className={`${styles.navBarItem} ${styles.slideInDown4}`}>
           <Link href="/TopLive">
             <span onClick={handleShowLinks}>Top Live</span>

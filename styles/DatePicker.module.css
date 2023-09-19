@@ -2,6 +2,7 @@
     display: flex;
     width: 100%;
     background: inherit;
+    
 }
 
 .buttonWrapper {
@@ -9,6 +10,7 @@
     align-items: flex-end;
     z-index: 2;
     background: inherit;
+    
 }
 
 .button {
@@ -16,8 +18,8 @@
     text-decoration: none;
     cursor: pointer;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -50,13 +52,13 @@
 .monthYearLabel {
     align-self: flex-start;
     z-index: 3;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     position: sticky;
     top: 0;
     left: 0;
     width: max-content;
-    margin: 0 14px 10px 0;
+    margin: 0 14px 30px 0;
 }
 
 .dateDayItem{
@@ -68,6 +70,7 @@
     width: 45px;
     height: 49px;
     flex-shrink: 0;
+    color: white;
 }
 
 .daysContainer {

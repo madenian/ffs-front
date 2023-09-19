@@ -35,7 +35,7 @@ function Schedule({ name, title, id, start, end, category, image, viewer }) {
         <div className={styles.DescriptionLine}>{category}</div>
 
         {start ? (
-          <div>
+          <div className={styles.DescriptionLine}>
             {formattedStartTime} / {formattedEndTime}
           </div>
         ) : null}

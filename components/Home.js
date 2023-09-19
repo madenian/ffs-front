@@ -112,7 +112,7 @@ function Home() {
     <div>
       <Nav></Nav>
       <main className={styles.main}>
-        <h1 className={styles.title}>Programme TW</h1>
+        <h1 className={styles.title}>Programme Twitch</h1>
         <div className={styles.datePickerContainer}>
           <DatePicker
             getSelectedDay={selectedDayOnClick}

@@ -10,7 +10,8 @@ const DateHourSelector = (props) => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#9146ff",
+        main: '#9146ff',
+        contrastText: '#ffffff',
       },
     },
   });
@@ -85,12 +86,7 @@ const DateHourSelector = (props) => {
   return (
     <>
       <div className={styles.DateHourPicker}>
-        {/* <ReactHorizontalDatePicker
-          enableScroll={false}
-          enableDays={10}
-          onSelectedDay={onSelectedDay}
-          className={styles.DatePicker}
-        /> */}
+    
         <ThemeProvider theme={theme}>
           <Box className={styles.Box} width={500}>
             <Slider

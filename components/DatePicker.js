@@ -28,10 +28,10 @@ export default function DatePicker({
     width: "45px",
     height: "45px",
     borderRadius: "50%",
-    border: `2px solid ${primaryColor}`,
+    border: `2px solid #ffffff`,
     color: primaryColor,
   };
-  const buttonColor = { background: primaryColor };
+  const buttonColor = { background: primaryColor, border: `2px solid #ffffff`  };
   const labelColor = { color: primaryColor };
 
   const getStyles = (day) => {

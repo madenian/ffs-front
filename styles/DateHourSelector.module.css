@@ -5,6 +5,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    padding-top: 15px;
 }
 .Slider{
     color:#6441a5;

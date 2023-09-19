@@ -98,7 +98,7 @@ const DateHourSelector = (props) => {
               min={0}
               max={24}
               color="primary"
-              valueLabel="white"
+              valuelabel="white"
               onChange={(e, value) => onSelectedHour(value)}
               marks={marks.map((mark) => ({
                 ...mark,

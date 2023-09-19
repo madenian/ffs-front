@@ -1,6 +1,6 @@
 import styles from "../styles/Esport.module.css";
 import React from "react";
-import Nav from "../components/NAV";
+import Nav from "../components/Nav";
 
 import DatePicker from "./DatePicker";
 

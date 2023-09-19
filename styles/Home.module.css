@@ -49,3 +49,11 @@
 .datePickerContainer {
   width: 450px;
 }
+
+@media (max-width: 650px) {
+ 
+  .datePickerContainer {
+    width: 250px;
+  }
+}
+

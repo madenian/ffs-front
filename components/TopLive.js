@@ -1,6 +1,6 @@
 import styles from "../styles/TopLive.module.css";
 import React, { useEffect, useState } from "react";
-import Nav from "../components/NAV";
+import Nav from "../components/Nav";
 import Schedule from "./schedule";
 import { serverAdress } from "../ffs-tools";
 
@@ -49,7 +49,7 @@ function TopLive() {
     <div>
       <Nav></Nav>
       <main className={styles.main}>
-        <h1 className={styles.title}>20 plus gros live Français</h1>
+        <h1 className={styles.title}>Top live FR</h1>
         <div className={styles.ScheduleGrid}>{topLiveDatatoDisplay}</div>
       </main>
     </div>

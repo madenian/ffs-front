@@ -8,10 +8,33 @@
   }
   
   .title {
-    line-height: 1.15;
-    font-size: 4rem;
-    color : white;
+    text-align: center;
+    font-size: 7em;
+    margin-bottom: 15px;
+    margin-top: 30px;
+    line-height: 1;
+    text-decoration: none;
+    color: #fff;
+    font-family: Iceland;
+    animation: neon2 1.5s ease-in-out infinite alternate;
     
+  }
+  
+  @keyframes neon2 {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #9146ff,
+        0 0 35px #9146ff, 0 0 40px #9146ff, 0 0 50px #9146ff, 0 0 75px #9146ff;
+    }
+    to {
+      text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #9146ff,
+        0 0 17.5px #9146ff, 0 0 20px #9146ff, 0 0 25px #9146ff, 0 0 32.5px #9146ff;
+    }
+  }
+  
+  @media (max-width: 650px) {
+    .title {
+      font-size: 3.5em;
+    }
   }
 
   .ScheduleGrid{

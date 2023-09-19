@@ -88,7 +88,7 @@ const DateHourSelector = (props) => {
       <div className={styles.DateHourPicker}>
     
         <ThemeProvider theme={theme}>
-          <Box className={styles.Box} width={500}>
+          <Box className={styles.Box} width="80%">
             <Slider
               className={styles.Slider}
               aria-label="Hour"

@@ -3,11 +3,12 @@ import React from "react";
 import Nav from "../components/NAV";
 // import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
+import { Bearer, twitchClientId } from "../ffs-tools";
 import Schedule from "./schedule";
 import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
 import DatePicker from "./DatePicker";
+import { serverAdress } from "../ffs-tools";
 
 function Home() {
 
@@ -24,7 +25,7 @@ function Home() {
   // Fetch du back pour récupérer les planning et infos au chargement de la page
 
   useEffect(() => {
-    fetch("http://localhost:3000/streamers").then((response) =>
+    fetch(`${serverAdress}/streamers`).then((response) =>
       response.json().then((data) => {
         setScheduleData(data);
       })

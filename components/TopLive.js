@@ -2,6 +2,7 @@ import styles from "../styles/TopLive.module.css";
 import React, { useEffect, useState } from "react";
 import Nav from "../components/NAV";
 import Schedule from "./schedule";
+import { serverAdress } from "../ffs-tools";
 
 function TopLive() {
   //state pour stocker les données de l'API
@@ -9,7 +10,7 @@ function TopLive() {
 
   // route pour fetch l'API de twitch afin de connaître les 20 plus gros live français
   useEffect(() => {
-    fetch("http://localhost:3000/toplive/fr")
+    fetch(`${serverAdress}/toplive/fr`)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
@@ -23,10 +24,10 @@ function TopLive() {
 
     //formattage de la description du live pour limiter le nombre de caractères
     const formatDescription =
-      streamer.title.length < 90
+      streamer.title.length < 75
         ? streamer.title
         :
-     streamer.title.slice(0, 90) + "...";
+     streamer.title.slice(0, 75) + "...";
 
     
     //formattage de l'image du live

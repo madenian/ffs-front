@@ -19,6 +19,7 @@ const DateHourSelector = (props) => {
     {
       value: 0,
       label: "Minuit",
+      color: "primary",
     },
     {
       value: 3,
@@ -94,11 +95,15 @@ const DateHourSelector = (props) => {
               defaultValue={actualHour}
               valueLabelDisplay="auto"
               step={0.5}
-              marks={marks}
               min={0}
               max={24}
               color="primary"
+              valueLabel="white"
               onChange={(e, value) => onSelectedHour(value)}
+              marks={marks.map((mark) => ({
+                ...mark,
+                label: <span className={styles.MarkLabel}>{mark.label}</span>,
+              }))}
             />
           </Box>
         </ThemeProvider>

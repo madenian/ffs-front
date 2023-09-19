@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import user from "../reducers/user";
+import "../styles/fonts.css";
 
 
 const store = configureStore({

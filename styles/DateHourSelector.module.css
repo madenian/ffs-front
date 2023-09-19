@@ -7,7 +7,13 @@
     align-items: center;
     padding-top: 15px;
 }
+.Slider{
+    color:#6441a5;
+    padding-top:50px;
+    padding-bottom:50px;
 
-/* .Slider {
-    color: #9146ff;
-} */
+}
+.MarkLabel {
+    color: white;
+    
+  }

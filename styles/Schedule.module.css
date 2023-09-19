@@ -109,8 +109,18 @@ overflow: hidden;
 }
 .DescriptionLine {
   width: 100%;
+  font-weight: 100 ;
 }
+.DescriptionTitle{
+  font-weight: 600;
+  width: 100%;
 
+}
+.DescriptionName{
+  font-weight: 600;
+  width: 100%;
+
+}
 .ViewerCount {
   color: #9146ff;
   font-weight: 400;

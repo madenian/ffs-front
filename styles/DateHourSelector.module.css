@@ -6,3 +6,13 @@
     justify-content: space-around;
     align-items: center;
 }
+.Slider{
+    color:#6441a5;
+    padding-top:50px;
+    padding-bottom:50px;
+
+}
+.MarkLabel {
+    color: white;
+    
+  }

@@ -39,6 +39,9 @@
   .title {
     font-size: 3.5em;
   }
+  .datePickerContainer {
+    width: 50px;
+  }
 }
 
 .ScheduleGrid {
@@ -49,3 +52,11 @@
 .datePickerContainer {
   width: 450px;
 }
+
+@media (max-width: 650px) {
+ 
+  .datePickerContainer {
+    width: 250px;
+  }
+}
+

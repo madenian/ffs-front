@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 import React from "react";
-import Nav from "../components/NAV";
+import Nav from "../components/Nav";
 // import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";

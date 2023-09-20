@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
 import Loading from "./Loading";
 import Schedule from "./schedule";
+import { serverAdress } from "../ffs-tools";
 
 function TopLive() {
   //state pour stocker les données de l'API
@@ -11,7 +12,7 @@ function TopLive() {
 
   // route pour fetch l'API de twitch afin de connaître les 20 plus gros live français
   useEffect(() => {
-    fetch("http://localhost:3000/toplive/fr")
+    fetch(`${serverAdress}/toplive/fr`)
       .then((response) => response.json())
       .then((data) => {
         setTopLiveData(data);

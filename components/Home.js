@@ -8,6 +8,7 @@ import Schedule from "./schedule";
 import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
 import DatePicker from "./DatePicker";
+import { serverAdress } from "../ffs-tools";
 
 function Home() {
   const actualHour = moment().format("HH");
@@ -22,7 +23,7 @@ function Home() {
   // Fetch du back pour récupérer les planning et infos au chargement de la page
 
   useEffect(() => {
-    fetch("http://localhost:3000/streamers").then((response) =>
+    fetch(`${serverAdress}/streamers`).then((response) =>
       response.json().then((data) => {
         setScheduleData(data);
         setIsLoading(false);

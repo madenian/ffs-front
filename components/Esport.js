@@ -7,6 +7,7 @@ import DateHourSelector from "./DateHourSelector";
 import EsportSchedule from "./EsportSchedule";
 import moment from "moment";
 import Loading from "./Loading";
+import { serverAdress } from "../ffs-tools";
 
 
 function Esport() {
@@ -34,7 +35,7 @@ function Esport() {
     const games = ["cs-go", "league-of-legends", "rl", "valorant", "dota-2", "starcraft-2", "fifa"];
 
     const fetchPromises = games.map((game) =>
-      fetch(`http://localhost:3000/esport/${game}`).then((response) =>
+      fetch(`${serverAdress}/esport/${game}`).then((response) =>
         response.json()
       )
     );

@@ -34,7 +34,7 @@ function EsportSchedule({ title, start, game, twitchFr, twitchEn, league }) {
               beat
               style={{ color: "#9146ff", cursor: "pointer" }}
             />
-            FR
+               FR
           </a>
         )}
 
@@ -45,7 +45,7 @@ function EsportSchedule({ title, start, game, twitchFr, twitchEn, league }) {
               beat
               style={{ color: "#9146ff", cursor: "pointer" }}
             />
-            EN
+               EN
           </a>
         )}
       </div>

@@ -31,7 +31,7 @@ function Esport() {
 
 
   useEffect(() => {
-    const games = ["cs-go", "league-of-legends", "rl", "valorant"];
+    const games = ["cs-go", "league-of-legends", "rl", "valorant", "dota-2", "starcraft-2", "fifa"];
 
     const fetchPromises = games.map((game) =>
       fetch(`http://localhost:3000/esport/${game}`).then((response) =>

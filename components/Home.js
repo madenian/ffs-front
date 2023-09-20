@@ -4,7 +4,6 @@ import Nav from "../components/Nav";
 import Loading from "./Loading";
 // import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
 import Schedule from "./schedule";
 import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
@@ -83,12 +82,15 @@ function Home() {
   // définition d'un filtre en fonction de l'heure de début et de fin : si l'heure de début est inférieure à l'heure sélectionnée et que l'heure de fin est supérieure à l'heure sélectionnée alors on garde le planning
   const filteredSchedulesByHour = filteredSchedules.filter((planning) => {
     const startHour = moment(planning.start_time).format("HH");
-    const endHour = planning.end_time ? moment(planning.end_time).format("HH") : null;
+    let endHour = planning.end_time ? moment(planning.end_time).format("HH") : null;
+  
+    if (endHour === "00") {
+      endHour = "24"; 
+    }
   
     return startHour <= selectedHour && (!endHour || endHour >= selectedHour);
   });
 
-  // avoir avec Adrien mais bug pour tous les streams qui finnissent à 00:00
  
 
   const ScheduleCard = filteredSchedulesByHour.map((planning) => {

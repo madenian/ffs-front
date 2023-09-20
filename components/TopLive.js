@@ -1,19 +1,21 @@
 import styles from "../styles/TopLive.module.css";
 import React, { useEffect, useState } from "react";
 import Nav from "../components/Nav";
+import Loading from "./Loading";
 import Schedule from "./schedule";
 
 function TopLive() {
   //state pour stocker les données de l'API
   const [topLiveData, setTopLiveData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   // route pour fetch l'API de twitch afin de connaître les 20 plus gros live français
   useEffect(() => {
     fetch("http://localhost:3000/toplive/fr")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         setTopLiveData(data);
+        setIsLoading(false)
       });
   }, []);
 
@@ -49,7 +51,8 @@ function TopLive() {
       <Nav></Nav>
       <main className={styles.main}>
         <h1 className={styles.title}>Top live FR</h1>
-        <div className={styles.ScheduleGrid}>{topLiveDatatoDisplay}</div>
+        <div className={styles.ScheduleGrid}>
+        {isLoading ? <Loading /> : topLiveDatatoDisplay}</div>
       </main>
     </div>
   );

@@ -3,37 +3,36 @@
 .main {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   min-height: 100vh;
-  padding: 4rem 0;
-
 }
 
 
 .title {
   text-align: center;
   font-size: 7em;
-  margin-bottom: 15px;
-  margin-top: 30px;
+  margin-bottom: 55px;
+  margin-top: 55px;
   line-height: 1;
   text-decoration: none;
   color: #fff;
   font-family: Iceland;
-  animation: neon2 1.5s ease-in-out infinite alternate;
+  animation: neon2 3s ease-in-out infinite alternate;
+  text-shadow:  0 0 8px #9146ff,
+      0 0 8px #9146ff, 0 0 8px #9146ff, 0 0 8px #9146ff, 0 0 8px #9146ff;
   
 }
 
-@keyframes neon2 {
+/* @keyframes neon2 {
   from {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #9146ff,
-      0 0 35px #9146ff, 0 0 40px #9146ff, 0 0 50px #9146ff, 0 0 75px #9146ff;
+    text-shadow: 0 0 1px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 3px #9146ff,
+    0 0 5px #9146ff, 0 0 5px #9146ff, 0 0 5px #9146ff, 0 0 5px #9146ff;
   }
   to {
-    text-shadow: 0 0 2.5px #fff, 0 0 5px #fff, 0 0 7.5px #fff, 0 0 10px #9146ff,
-      0 0 17.5px #9146ff, 0 0 20px #9146ff, 0 0 25px #9146ff, 0 0 32.5px #9146ff;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 10px #9146ff,
+      0 0 10px #9146ff, 0 0 10px #9146ff, 0 0 10px #9146ff, 0 0 10px #9146ff;
   }
-}
+} */
 
 @media (max-width: 650px) {
   .title {

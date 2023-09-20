@@ -8,10 +8,37 @@
   }
   
   .title {
-    line-height: 1.15;
-    font-size: 4rem;
+    text-align: center;
+    font-size: 7em;
+    margin-bottom: 55px;
+    margin-top: 55px;
+    line-height: 1;
+    text-decoration: none;
+    color: #fff;
+    font-family: Iceland;
+    animation: neon2 3s ease-in-out infinite alternate;
+    text-shadow:  0 0 8px #9146ff,
+        0 0 8px #9146ff, 0 0 8px #9146ff, 0 0 8px #9146ff, 0 0 8px #9146ff;
+    
+  }
+  @media (max-width: 650px) {
+    .title {
+      font-size: 3.5em;
+    }
   }
 
-  .datePickerContainer{
+  .ScheduleGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .datePickerContainer {
     width: 450px;
-}
+  }
+  
+  @media (max-width: 650px) {
+   
+    .datePickerContainer {
+      width: 250px;
+    }
+  }

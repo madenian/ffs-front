@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import React from "react";
 import Nav from "../components/Nav";
+import Loading from "./Loading";
 // import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { Bearer, serverAdress, twitchClientId } from "../ffs-tools";
@@ -10,16 +11,14 @@ import DateHourSelector from "./DateHourSelector";
 import DatePicker from "./DatePicker";
 
 function Home() {
-
-
   const actualHour = moment().format("HH");
   const actualDay = moment().format("DD/MM/YYYY");
 
-  const [scheduleData, setScheduleData] =useState([])
+  const [scheduleData, setScheduleData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const [selectedDate, setSelectedDate] = useState(actualDay);
   const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
-
 
   // Fetch du back pour récupérer les planning et infos au chargement de la page
 
@@ -27,21 +26,20 @@ function Home() {
     fetch("http://localhost:3000/streamers").then((response) =>
       response.json().then((data) => {
         setScheduleData(data);
+        setIsLoading(false);
       })
     );
   }, []);
-
+ 
 
   const selectedDayOnClick = (val) => {
     const formattedDate = moment(val).format("DD/MM/YYYY");
     setSelectedDate(formattedDate);
-    ;
   };
-  
 
   // fonction définie pour transiter dans les props de DateHourSelector pour l'inverse data flow
   const selectedTime = (hour) => {
-    console.log("Hour du HOME", hour);
+    
     // const formattedHour = moment(hour).format("HH");
     setSelectedHour(hour);
   };
@@ -59,12 +57,15 @@ function Home() {
       };
     });
   });
-  
+
+
 
   // Tri des plannings par date de début
   const sortedSchedules = allSchedules.sort((a, b) => {
     return new Date(a.start_time).getTime() - new Date(b.start_time).getTime();
   });
+
+
 
   //formattage de la date en fonction du start_time
   const dayOfStream = (date) => {
@@ -72,26 +73,31 @@ function Home() {
     return day;
   };
   // Filtrer les plannings qui ne sont pas sur la bonne journée
-  
+
   const filteredSchedules = sortedSchedules.filter((planning) => {
     return dayOfStream(planning.start_time) == selectedDate;
   });
 
+
+
   // définition d'un filtre en fonction de l'heure de début et de fin : si l'heure de début est inférieure à l'heure sélectionnée et que l'heure de fin est supérieure à l'heure sélectionnée alors on garde le planning
   const filteredSchedulesByHour = filteredSchedules.filter((planning) => {
     const startHour = moment(planning.start_time).format("HH");
-    const endHour = moment(planning.end_time).format("HH");
-
-    if (!endHour) {
-      planning.end_time = endHour;
-      
-    }
-    return startHour <= selectedHour && endHour >= selectedHour;
+    const endHour = planning.end_time ? moment(planning.end_time).format("HH") : null;
+  
+    return startHour <= selectedHour && (!endHour || endHour >= selectedHour);
   });
+
+  // avoir avec Adrien mais bug pour tous les streams qui finnissent à 00:00
+ 
 
   const ScheduleCard = filteredSchedulesByHour.map((planning) => {
     // Maintenant, vous pouvez accéder aux données du streamer via planning.streamerData
-    const category = planning.category ? planning.category.name : 'Catégorie inconnue';
+    const category = planning.category
+      ? planning.category.name
+      : "Catégorie inconnue";
+
+   
 
     return (
       <Schedule
@@ -107,7 +113,6 @@ function Home() {
     );
   });
 
-
   return (
     <div>
       <Nav></Nav>
@@ -120,14 +125,11 @@ function Home() {
             color={"#9146FF"}
             endDate={90}
           />
-          </div>
+        </div>
 
-          <DateHourSelector
-            selectedTime={selectedTime}
-          ></DateHourSelector>
+        <DateHourSelector selectedTime={selectedTime}></DateHourSelector>
         <div className={styles.ScheduleGrid}>
-         
-          {ScheduleCard}
+          {isLoading ? <Loading /> : ScheduleCard}
         </div>
       </main>
     </div>

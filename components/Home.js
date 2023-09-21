@@ -9,6 +9,8 @@ import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
 import DatePicker from "./DatePicker";
 import { serverAdress } from "../ffs-tools";
+import Fade from 'react-reveal/Fade';
+import Zoom from 'react-reveal/Zoom';
 
 
 function Home() {
@@ -125,9 +127,13 @@ function Home() {
 
         <DateHourSelector selectedTime={selectedTime}></DateHourSelector>
         <div className={styles.ScheduleGrid}>
+        <Zoom>
           {isLoading ? <Loading /> : ScheduleCard}
+        </Zoom>
         </div>
+
       </main>
+      <Fade top cascade>
       <div className={styles.presentation} id="presentation">
         <h2 className={styles.title}>Presentation du <span className={styles.secondWord}>projet</span></h2>
         <div className={styles.presentationContainer}>
@@ -151,17 +157,19 @@ function Home() {
           </p>
         </div>
       </div>
+      </Fade>
+      <Fade top cascade>
       <div className={styles.contact} id="contact">
         <h2 className={styles.title}>Rentrons en <span className={styles.secondWord}>contact</span></h2>
         <div className={styles.contactContainer}>
-          <h3>N'hésite pas à nous écrire</h3>
+          <h3>N'hésite pas à nous écrire sur Twitter</h3>
           <p>
             Si tu es viewer que tu as une suggestion, une idéee ou que tu
             rencontres un problème.
           </p>
           <p>
-            Si tu es streamer et que souhaiterais que ton planning soir intégré
-            au site.
+            Si tu es streamer et que souhaiterais que ton planning soit intégré
+            au programme.
           </p>
           <p>Si tu as juste envie de discuter.</p>
           <div style={styles.twitterContainer}>
@@ -173,6 +181,7 @@ function Home() {
           </div>
         </div>
       </div>
+      </Fade>
       <footer className={styles.footer}>
         Programme Twitch - ©PTW - Pensé et créé par Adrien et Thibaud
       </footer>

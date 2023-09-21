@@ -36,11 +36,7 @@ function Nav() {
     >
       <div className={styles.navBarLogo}>
         <Link href="/">
-          <img
-            src="./logo.png"
-            alt="logo"
-            className={`${styles.logoImg} ${styles.rotateOnHover}`}
-          />
+          <img src="./logo.png" alt="logo" className={styles.logoImg} />
         </Link>
       </div>
 
@@ -65,7 +61,7 @@ function Nav() {
         </li>
         <li
           className={`${styles.navBarItem} ${
-            styles.slideInDown4
+            styles.slideInDown3
           } ${isLinkActive("/TopLive")}`}
         >
           <Link href="/TopLive">
@@ -74,20 +70,12 @@ function Nav() {
         </li>
         {showPres ? (
           <>
-            <li
-              className={`${styles.navBarItem} ${
-                styles.slideInDown4
-              }`}
-            >
+            <li className={`${styles.navBarItem} ${styles.slideInDown4}`}>
               <ScrollLink to="presentation" smooth={true} duration={500}>
                 <span onClick={handleShowLinks}>Présentation</span>
               </ScrollLink>
             </li>
-            <li
-              className={`${styles.navBarItem} ${
-                styles.slideInDown3
-              }`}
-            >
+            <li className={`${styles.navBarItem} ${styles.slideInDown5}`}>
               <ScrollLink to="contact" smooth={true} duration={500}>
                 <span onClick={handleShowLinks}>Contact</span>
               </ScrollLink>

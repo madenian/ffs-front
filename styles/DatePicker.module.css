@@ -3,8 +3,6 @@
     width: 100%;
     background: inherit;
     
-    
-    
 }
 
 .buttonWrapper {
@@ -82,7 +80,7 @@
 }
 
 .dayLabel {
-    font-size: 12px;
+    font-size: 9px;
     margin: 4px 0 0 0;
 }
 

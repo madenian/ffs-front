@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitch, faEye } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 
-
 function formatTime(timeStr) {
   const date = moment(timeStr);
   return date.format("HH:mm");
@@ -21,11 +20,17 @@ function Schedule({ name, title, id, start, end, category, image, viewer }) {
       <div className={styles.ImageContainer}>
         <img src={image} className={styles.StreamImage}></img>
         <a href={twitchUrl} target="_blank" rel="noopener noreferrer">
-          <FontAwesomeIcon
-            icon={faEye}
-            beat
-            style={{ color: "#9146ff", cursor: "pointer" }}
-          />
+          <svg
+            width="30"
+            height="30"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill="#a855f7"
+              d="M11.64 5.93h1.43v4.28h-1.43m3.93-4.28H17v4.28h-1.43M7 2L3.43 5.57v12.86h4.28V22l3.58-3.57h2.85L20.57 12V2m-1.43 9.29l-2.85 2.85h-2.86l-2.5 2.5v-2.5H7.71V3.43h11.43Z"
+            />
+          </svg>
         </a>
         {viewer ? <div className={styles.ViewerCount}>{viewer}</div> : null}
         {/* <FontAwesomeIcon icon={faTwitch} beat style={{color: "#be5cff",}} /> */}

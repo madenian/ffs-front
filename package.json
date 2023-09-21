@@ -25,6 +25,7 @@
     "react-dom": "18.1.0",
     "react-horizontal-datepicker": "^2.0.3",
     "react-redux": "^8.1.2",
+    "react-scroll": "^1.8.9",
     "redux-persist": "^6.0.0"
   },
   "devDependencies": {

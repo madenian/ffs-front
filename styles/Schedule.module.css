@@ -1,12 +1,4 @@
-/* .CardContainer {
-height: 160px;
-width:280px; 
-display: flex;
-border: 2px solid black;
-border-radius: 10px;
-margin: 20px;
-overflow: hidden;
-} */
+
 
 .CardContainer {
   background: #191c29;
@@ -20,6 +12,8 @@ overflow: hidden;
   color: rgb(255, 255, 255);
   margin: 20px;
 }
+
+
 
 .CardContainer:hover {
   color: rgb(88 199 250 / 100%);

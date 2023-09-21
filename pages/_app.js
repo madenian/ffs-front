@@ -17,6 +17,7 @@ function App({ Component, pageProps }) {
         <Head>
           <title>Programme TW</title>
         </Head>
+        
         <Component {...pageProps} />
       </Provider>
     </>

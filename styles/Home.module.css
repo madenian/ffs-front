@@ -7,20 +7,22 @@
   min-height: 100vh;
 }
 
-
 .title {
   text-align: center;
-  font-size: 7em;
+  font-size: 5em;
   margin-bottom: 55px;
   margin-top: 55px;
   line-height: 1;
   text-decoration: none;
   color: #fff;
   font-family: Iceland;
-  animation: neon2 3s ease-in-out infinite alternate;
-  text-shadow:  0 0 8px #9146ff,
-      0 0 8px #9146ff, 0 0 8px #9146ff, 0 0 8px #9146ff, 0 0 8px #9146ff;
-  
+}
+
+.secondWord{
+  text-align: center;
+  text-decoration: none;
+  color: #9146ff;
+  font-family: Iceland;
 }
 
 /* @keyframes neon2 {
@@ -50,9 +52,87 @@
 }
 
 @media (max-width: 650px) {
- 
   .datePickerContainer {
     width: 250px;
   }
+  .presentationContainer {
+    width: 100%;
+  }
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 100vh;
+  border-top: 1px dashed rgba(255, 255, 255, 0.5);
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+.presentationContainer {
+  width: 50%;
+  min-height: 50%;
+  color: white;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  min-height: 100vh;
+}
+.contactContainer {
+  width: 50%;
+  min-height: 50%;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+}
+.twitter{
+  height: 120px;
+  width: 120px;
+  color: white;
+  background-color: #18191f;
+  box-shadow: 2px 2px 2px #00000080, 10px 1px 12px #00000080,
+    2px 2px 10px #00000080, 2px 2px 3px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080, inset 2px 2px 10px #00000080,
+    inset 2px 2px 10px #00000080;
+  border-radius: 29px;
+  padding: 11px 19px;
+  margin:  60px;
+  animation: animate 5s linear infinite;
+  text-shadow: 0 0 50px #0072ff, 0 0 100px #0072ff, 0 0 150px #0072ff,
+    0 0 200px #0072ff;
+  cursor: pointer;
+}
+
+
+@keyframes animate {
+  from {
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@media (max-width: 650px) {
+  .presentationContainer {
+    width: 70%;
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+.footer {
+  color: white;
+  text-align: center;
+  
 }
 

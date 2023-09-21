@@ -2,16 +2,15 @@ import styles from "../styles/Home.module.css";
 import React from "react";
 import Nav from "../components/Nav";
 import Loading from "./Loading";
-// import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Schedule from "./schedule";
 import moment from "moment";
 import DateHourSelector from "./DateHourSelector";
 import DatePicker from "./DatePicker";
 import { serverAdress } from "../ffs-tools";
-import Fade from 'react-reveal/Fade';
-import Zoom from 'react-reveal/Zoom';
-
+import Fade from "react-reveal/Fade";
+import Zoom from "react-reveal/Zoom";
+import NoStream from "./NoStream";
 
 function Home() {
   const actualHour = moment().format("HH");
@@ -127,60 +126,76 @@ function Home() {
 
         <DateHourSelector selectedTime={selectedTime}></DateHourSelector>
         <div className={styles.ScheduleGrid}>
-        <Zoom>
-          {isLoading ? <Loading /> : ScheduleCard}
-        </Zoom>
+          <Zoom>
+            {isLoading ? (
+              <Loading />
+            ) : ScheduleCard.length === 0 ? (
+              <NoStream />
+            ) : ScheduleCard.length === 1 ? (
+              <>
+                {ScheduleCard[0]}
+                <div></div>
+              </>
+            ) : (
+              ScheduleCard
+            )}
+          </Zoom>
         </div>
-
       </main>
       <Fade top cascade>
-      <div className={styles.presentation} id="presentation">
-        <h2 className={styles.title}>Presentation du <span className={styles.secondWord}>projet</span></h2>
-        <div className={styles.presentationContainer}>
-          <h3>Bienvenue sur PTW - Votre Guide Complet des Programmes Twitch</h3>
-          <p>
-            Sur PTW, nous avons un objectif clair : vous offrir un accès complet
-            et facile à la grille des programmes diffusés sur Twitch.
-          </p>
-          <h3>Tout ce dont vous avez besoin, en un seul endroit</h3>
-          <p>
-            Nous collectons et mettons à jour en temps réel les informations des
-            streams directement depuis Twitch. Cela signifie que vous pouvez
-            consulter les horaires, les descriptions, et les détails des
-            streamers et des évenements Esport sur le site.
-          </p>
-          <h3>La communauté au cœur de PTW</h3>
-          <p>
-            Chez PTW, nous croyons en la force de la communauté Twitch. C'est
-            pourquoi nous encourageons les streamers à mettre à jour leurs
-            plannings pour garantir un accés à ces informations.
-          </p>
-        </div>
-      </div>
-      </Fade>
-      <Fade top cascade>
-      <div className={styles.contact} id="contact">
-        <h2 className={styles.title}>Rentrons en <span className={styles.secondWord}>contact</span></h2>
-        <div className={styles.contactContainer}>
-          <h3>N'hésite pas à nous écrire sur Twitter</h3>
-          <p>
-            Si tu es viewer que tu as une suggestion, une idéee ou que tu
-            rencontres un problème.
-          </p>
-          <p>
-            Si tu es streamer et que souhaiterais que ton planning soit intégré
-            au programme.
-          </p>
-          <p>Si tu as juste envie de discuter.</p>
-          <div style={styles.twitterContainer}>
-            <img
-              src="twitter.svg"
-              alt="logo twitter"
-              className={styles.twitter}
-            />
+        <div className={styles.presentation} id="presentation">
+          <h2 className={styles.title}>
+            Presentation du <span className={styles.secondWord}>projet</span>
+          </h2>
+          <div className={styles.presentationContainer}>
+            <h3>
+              Bienvenue sur PTW - Votre Guide Complet des Programmes Twitch
+            </h3>
+            <p>
+              Sur PTW, nous avons un objectif clair : vous offrir un accès
+              complet et facile à la grille des programmes diffusés sur Twitch.
+            </p>
+            <h3>Tout ce dont vous avez besoin, en un seul endroit</h3>
+            <p>
+              Nous collectons et mettons à jour en temps réel les informations
+              des streams directement depuis Twitch. Cela signifie que vous
+              pouvez consulter les horaires, les descriptions, et les détails
+              des streamers et des évenements Esport sur le site.
+            </p>
+            <h3>La communauté au cœur de PTW</h3>
+            <p>
+              Chez PTW, nous croyons en la force de la communauté Twitch. C'est
+              pourquoi nous encourageons les streamers à mettre à jour leurs
+              plannings pour garantir un accés à ces informations.
+            </p>
           </div>
         </div>
-      </div>
+      </Fade>
+      <Fade top cascade>
+        <div className={styles.contact} id="contact">
+          <h2 className={styles.title}>
+            Rentrons en <span className={styles.secondWord}>contact</span>
+          </h2>
+          <div className={styles.contactContainer}>
+            <h3>N'hésite pas à nous écrire sur Twitter</h3>
+            <p>
+              Si tu es viewer que tu as une suggestion, une idéee ou que tu
+              rencontres un problème.
+            </p>
+            <p>
+              Si tu es streamer et que souhaiterais que ton planning soit
+              intégré au programme.
+            </p>
+            <p>Si tu as juste envie de discuter.</p>
+            <div style={styles.twitterContainer}>
+              <img
+                src="twitter.svg"
+                alt="logo twitter"
+                className={styles.twitter}
+              />
+            </div>
+          </div>
+        </div>
       </Fade>
       <footer className={styles.footer}>
         Programme Twitch - ©PTW - Pensé et créé par Adrien et Thibaud

@@ -64,19 +64,11 @@
     align-items: center;
     position: fixed;
     right: -100vw;
-    bottom: 0;
+    bottom: -5vh;
     width: 0;
     height: 100vh;
     padding: 2rem;
     background-color: #222222;
-    background: repeating-linear-gradient(
-        45deg,
-        #2b2b2b 0%,
-        #2b2b2b 10%,
-        #222222 0%,
-        #222222 50%
-      )
-      0 / 15px 15px;
     visibility: hidden;
     transition: all 0.8s ease-out;
     font-size: 35px;

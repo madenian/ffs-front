@@ -27,10 +27,10 @@ function TopLive() {
 
     //formattage de la description du live pour limiter le nombre de caractères
     const formatDescription =
-      streamer.title.length < 90
+      streamer.title.length < 75
         ? streamer.title
         :
-     streamer.title.slice(0, 90) + "...";
+     streamer.title.slice(0, 75) + "...";
 
     
     //formattage de l'image du live

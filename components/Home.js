@@ -187,7 +187,7 @@ function Home() {
           </div>
         </div>
       </Fade>
-      <Fade right>
+      <Fade top cascade>
         <div className={styles.contact} id="contact">
           <h2 className={styles.title}>
             Rentrons en <span className={styles.secondWord}>contact</span>

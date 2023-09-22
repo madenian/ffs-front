@@ -57,9 +57,7 @@
   .navBar {
     position: fixed;
   }
-  .logoImg {
-    display: none;
-  }
+ 
   .navBarLinks {
     flex-direction: column;
     justify-content: center;
@@ -181,3 +179,18 @@
     transition: all 1.2s ease-out;
   }
 }
+
+@media screen and (max-width: 1250px) {
+  .navBarLinks {
+    
+    width: 100%;
+   
+  }
+
+  .logoImg {
+    display: none;
+  }
+
+}
+  
+

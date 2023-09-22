@@ -4,6 +4,7 @@ import Nav from "../components/Nav";
 import Loading from "./Loading";
 import Schedule from "./schedule";
 import { serverAdress } from "../ffs-tools";
+import Zoom from "react-reveal/Zoom";
 
 function TopLive() {
   //state pour stocker les données de l'API
@@ -51,9 +52,12 @@ function TopLive() {
     <div>
       <Nav></Nav>
       <main className={styles.main}>
-        <h1 className={styles.title}>Top live FR</h1>
+        <h1 className={styles.title}>Top live <span className={styles.secondWord}>FR</span></h1>
         <div className={styles.ScheduleGrid}>
-        {isLoading ? <Loading /> : topLiveDatatoDisplay}</div>
+          <Zoom>
+          {isLoading ? <Loading /> : topLiveDatatoDisplay}
+          </Zoom>
+        </div>
       </main>
     </div>
   );

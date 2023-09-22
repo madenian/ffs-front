@@ -19,6 +19,39 @@ body {
   --card-width: 290px;
 }
 
+
 h3 {
  color: #5ddcff
+}
+
+h1 {
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 55px;
+  margin-top: 55px;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  font-family: Iceland;
+}
+
+h2 {
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 55px;
+  margin-top: 55px;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  font-family: Iceland;
+}
+
+
+
+@media screen and (max-width: 1250px) {
+  :root {
+    --card-height: 162px;
+    --card-width: 259px;
+  }
+
 }

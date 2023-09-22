@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Link as ScrollLink } from "react-scroll";
 import { useRouter } from "next/router";
 
+
 function Nav() {
   const router = useRouter();
 
@@ -83,7 +84,7 @@ function Nav() {
           </>
         ) : null}
       </ul>
-
+          
       <button className={styles.navBarBurger} onClick={handleShowLinks}>
         <span className={styles.burgerLine}></span>
       </button>

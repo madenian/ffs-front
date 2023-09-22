@@ -11,6 +11,7 @@ import { serverAdress } from "../ffs-tools";
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import NoStream from "./NoStream";
+import Twitter from "./Twitter";
 
 function Home() {
   const actualHour = moment().format("HH");
@@ -141,8 +142,23 @@ function Home() {
             )}
           </Zoom>
         </div>
+
+        <div className={styles.buttonContainer}>
+          <div className={styles.TwitterContainer}>
+            <a href="https://twitter.com/ProgrammeTW">
+              <Twitter></Twitter>
+            </a>
+          </div>
+          <div className={styles.ArrowContainer}>
+            <div class="wrapper">
+              <div class="icon">
+                <img src="arrow-down.svg" alt="arrow-down" />
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
-      <Fade top cascade>
+      <Fade left>
         <div className={styles.presentation} id="presentation">
           <h2 className={styles.title}>
             Presentation du <span className={styles.secondWord}>projet</span>
@@ -171,7 +187,7 @@ function Home() {
           </div>
         </div>
       </Fade>
-      <Fade top cascade>
+      <Fade right>
         <div className={styles.contact} id="contact">
           <h2 className={styles.title}>
             Rentrons en <span className={styles.secondWord}>contact</span>
@@ -187,12 +203,15 @@ function Home() {
               intégré au programme.
             </p>
             <p>Si tu as juste envie de discuter.</p>
+
             <div style={styles.twitterContainer}>
-              <img
-                src="twitter.svg"
-                alt="logo twitter"
-                className={styles.twitter}
-              />
+              <a href="https://twitter.com/ProgrammeTW">
+                <img
+                  src="twitter.svg"
+                  alt="logo twitter"
+                  className={styles.twitter}
+                />
+              </a>
             </div>
           </div>
         </div>

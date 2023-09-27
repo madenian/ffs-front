@@ -55,33 +55,14 @@ const DateHourSelector = (props) => {
     },
   ];
   const actualHour = parseInt(moment().format("HH"));
-  // const actualDay = moment().format("DD/MM/YYYY");
-
-  // const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
-  // const [selectedDate, setSelectedDate] = useState(actualDay);
-
-  //fonction reçu pour l'inverse data flow pour la gestion du jour
-  // const onSelectedDay = (date) => {
-  //   const formattedDate = moment(date).format("DD/MM/YYYY");
-  //   props.selectedDay(formattedDate);
-
-  //   // console.log("selectedDate dans la fonction ", selectedDate);
-  //   console.log("selectedDate dans la fonction formatted ", formattedDate);
-  // };
 
   //fonction reçu pour l'inverse data flow pour la gestion de l'heure
   const onSelectedHour = (hour) => {
-    console.log("hour", hour);
+   
     props.selectedTime(hour);
     // console.log("selectedHour dans la fonction ", formattedHour);
   };
 
-  // console.log("selectedDate En dehors de tout ", selectedDate);
-  // console.log("hour", actualHour);
-  // console.log("selectedHour", selectedHour);
-
-  // console.log("actualDay", actualDay);
-  // console.log("selectedDate", selectedDate);
 
   return (
     <>

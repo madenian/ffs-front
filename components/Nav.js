@@ -85,7 +85,7 @@ function Nav() {
         ) : null}
       </ul>
           
-      <button className={styles.navBarBurger} onClick={handleShowLinks}>
+      <button className={styles.navBarBurger} onClick={handleShowLinks} aria-label="Open Menu">
         <span className={styles.burgerLine}></span>
       </button>
     </div>

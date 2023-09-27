@@ -28,7 +28,7 @@ function EsportSchedule({ title, start, game, twitchFr, twitchEn, league }) {
           alt="Image du jeu"
         />
         {twitchUrlFr && (
-          <a href={twitchUrlFr} target="_blank" rel="noopener noreferrer">
+          <a href={twitchUrlFr} target="_blank" rel="noopener noreferrer" aria-label="go to twitch channel">
             <svg
               width="25"
               height="25"

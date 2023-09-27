@@ -19,7 +19,6 @@ function Home() {
 
   const [scheduleData, setScheduleData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
   const [selectedDate, setSelectedDate] = useState(actualDay);
   const [selectedHour, setSelectedHour] = useState(parseInt(actualHour));
 
@@ -116,6 +115,7 @@ function Home() {
         <h1 className={styles.title}>
           Programme <span className={styles.secondWord}>Twitch</span>
         </h1>
+        <h3>Selectionne la date et le jour de ton choix et retrouve tes programmes favoris</h3>
         <div className={styles.datePickerContainer}>
           <DatePicker
             getSelectedDay={selectedDayOnClick}
@@ -150,9 +150,9 @@ function Home() {
             </a>
           </div>
           <div className={styles.ArrowContainer}>
-            <div class="wrapper">
-              <div class="icon">
-                <img src="arrow-down.svg" alt="arrow-down" />
+            <div className={styles.wrapper}>
+              <div className={styles.icon}>
+                <img src="arrow-down.svg" alt="arrow-down" className={styles.ArrowImg}/>
               </div>
             </div>
           </div>

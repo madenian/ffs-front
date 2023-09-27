@@ -14,10 +14,11 @@ function App({ Component, pageProps }) {
   return (
     <>
       <Provider store={store}>
-        <Head>
-          <title>Programme TW</title>
-        </Head>
-        
+      <Head>
+        <title>Programme Twitch</title>
+        <meta name="description" content="Le programme et le planning de l'ensemble du streaming twitch Français et des évennement esport" />
+      </Head>
+
         <Component {...pageProps} />
       </Provider>
     </>

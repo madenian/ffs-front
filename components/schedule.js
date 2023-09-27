@@ -18,8 +18,8 @@ function Schedule({ name, title, id, start, end, category, image, viewer }) {
   return (
     <div className={styles.CardContainer}>
       <div className={styles.ImageContainer}>
-        <img src={image} className={styles.StreamImage}></img>
-        <a href={twitchUrl} target="_blank" rel="noopener noreferrer">
+        <img src={image} className={styles.StreamImage} alt = "Image du streamer"></img>
+        <a href={twitchUrl} target="_blank" rel="noopener noreferrer" aria-label="go to twitch channel">
           <svg
             width="30"
             height="30"

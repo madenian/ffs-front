@@ -39,6 +39,7 @@ function Esport() {
       "dota-2",
       "starcraft-2",
       "fifa",
+      "r6-siege",
     ];
 
     const fetchPromises = games.map((game) =>
@@ -81,7 +82,7 @@ function Esport() {
   const filteredSchedulesByHour = filteredSchedules.filter((planning) => {
     const startHour = moment(planning.begin_at).format("HH");
     const endHour = moment(startHour, "HH").add(2, "hours").format("HH");
-    console.log(endHour);
+    ;
 
     return startHour <= selectedHour && (!endHour || endHour >= selectedHour);
   });
@@ -93,7 +94,7 @@ function Esport() {
 
     // Parcourez les éléments de streams_list pour trouver les liens Twitch appropriés
     planning.streams_list.forEach((stream) => {
-      console.log(stream);
+   
       if (stream.language === "fr") {
         twitchFrUrl = stream.raw_url;
       } else if (stream.language === "en") {

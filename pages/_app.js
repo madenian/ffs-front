@@ -17,7 +17,7 @@ function App({ Component, pageProps }) {
       <Provider store={store}>
       <Head>
         <title>Programme Twitch</title>
-        <meta name="description" content="Le programme et le planning de l'ensemble du streaming twitch Français et des évennement esport" />
+        <meta name="description" content="Le programme et le planning de l'ensemble du streaming twitch Français et des évenements e-Sport" />
       </Head>
 
         <Component {...pageProps} />

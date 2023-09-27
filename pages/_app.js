@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import user from "../reducers/user";
 import "../styles/fonts.css";
+import { Analytics } from '@vercel/analytics/react';
 
 
 const store = configureStore({
@@ -20,6 +21,7 @@ function App({ Component, pageProps }) {
       </Head>
 
         <Component {...pageProps} />
+        <Analytics />
       </Provider>
     </>
   );

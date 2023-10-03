@@ -1,13 +1,12 @@
 # PROGRAMME TWITCH
 
-programme-tw.com
+www.programme-tw.com
 
 Bienvenue sur Programme TWITCH ! Un site centralisé pour consulter les plannings des principaux streamers français et des matchs esport.
 
 ## Aperçu
 
 ![Logo du site](https://raw.githubusercontent.com/Tabonnel/ffs-front/main/public/logo.png)
-
 
 ## Fonctionnalités
 

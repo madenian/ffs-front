@@ -1,2 +1,2 @@
-export const serverAdress = "https://fss-back.vercel.app"
+export const serverAdress ='https://fss-back.vercel.app'
 

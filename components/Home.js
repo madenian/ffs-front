@@ -27,8 +27,10 @@ function Home() {
   useEffect(() => {
     fetch(`${serverAdress}/streamers`).then((response) =>
       response.json().then((data) => {
+        console.log
         setScheduleData(data);
         setIsLoading(false);
+        console.log("test", scheduleData)
       })
     );
   }, []);

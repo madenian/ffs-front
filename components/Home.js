@@ -178,13 +178,13 @@ function Home() {
               Nous collectons et mettons à jour en temps réel les informations
               des streams directement depuis Twitch. Cela signifie que vous
               pouvez consulter les horaires, les descriptions, et les détails
-              des streamers et des évenements Esport sur le site.
+              des streamers et des évenements e-Sport sur le site.
             </p>
             <h3>La communauté au cœur de PTW</h3>
             <p>
               Chez PTW, nous croyons en la force de la communauté Twitch. C'est
               pourquoi nous encourageons les streamers à mettre à jour leurs
-              plannings pour garantir un accés à ces informations.
+              plannings pour garantir un accès à ces informations.
             </p>
           </div>
         </div>
@@ -197,7 +197,7 @@ function Home() {
           <div className={styles.contactContainer}>
             <h3>N'hésite pas à nous écrire sur Twitter</h3>
             <p>
-              Si tu es viewer que tu as une suggestion, une idéee ou que tu
+              Si tu es viewer que tu as une suggestion, une idée ou que tu
               rencontres un problème.
             </p>
             <p>
